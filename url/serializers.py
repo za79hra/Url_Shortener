@@ -28,3 +28,14 @@ class VerifyOneTimePasswordSerializer(serializers.Serializer):
             raise serializers.ValidationError("please  enter the correct code")
         return attrs
     
+
+
+class LinkShortenerSerializer(serializers.ModelSerializer):
+    short_url = serializers.ReadOnlyField()
+    class Meta:
+        model = LinkShortenerModel
+
+        fields = ['orginal_url', 'short_url', 'url_viewed']
+        read_only_fields = ['created_at', 'modified_at', 'is_deleted', 'owner']
+
+    
