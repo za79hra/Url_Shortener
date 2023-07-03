@@ -47,7 +47,7 @@ python manage.py runserver
 6. The app should now be running on http://localhost:8000.
 
 
-Usage:
+**Usage**:
 
 
 
