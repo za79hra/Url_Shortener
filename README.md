@@ -47,7 +47,7 @@ python manage.py runserver
 6. The app should now be running on http://localhost:8000.
 
 
-**Usage**:
+# **Usage**:
 
 
 
@@ -67,7 +67,7 @@ To redirect visitors to the original URL, use the short link in the format http:
 
 
 
-API Endpoints:
+# **API Endpoints**:
 
 
 
@@ -80,7 +80,7 @@ API Endpoints:
 -GET /<short_url>/: Redirect visitors to the original URL associated with the short link.
 
 
-Note:
+# **Note**:
 
 
 Make sure to update the Redis connection details in the views.py file with your Redis configuration (host, port, etc.):
@@ -90,11 +90,11 @@ redis_connection = Redis(host='localhost', port=6379, db=0, charset='utf-8', dec
 This README is a basic template. Feel free to add more details about the app, usage examples, and any other relevant information.
 
 
-Contributing:
+# **Contributing**:
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-License:
+# **License**:
 
 
 
