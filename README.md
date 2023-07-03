@@ -79,6 +79,17 @@ API Endpoints:
 -GET /shortened-links/: Get a list of all shortened links.
 -GET /<short_url>/: Redirect visitors to the original URL associated with the short link.
 
+
+Note:
+
+
+Make sure to update the Redis connection details in the views.py file with your Redis configuration (host, port, etc.):
+```bash
+redis_connection = Redis(host='localhost', port=6379, db=0, charset='utf-8', decode_responses=True)
+```
+This README is a basic template. Feel free to add more details about the app, usage examples, and any other relevant information.
+
+
 Contributing:
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
