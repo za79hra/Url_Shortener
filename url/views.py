@@ -25,7 +25,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import redirect, get_object_or_404
 
 
-redis_connection = Redis(host='localhost', port=6370, db=0, charset='utf-8', decode_responses=True)
+redis_connection = Redis(host='redis', port=6379, db=0, charset='utf-8', decode_responses=True)
 
 
 class SendOneTimePassword(APIView):

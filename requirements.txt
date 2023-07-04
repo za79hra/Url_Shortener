@@ -14,4 +14,4 @@ requests==2.28.2
 djangorestframework-swagger
 psycopg2-binary
 shortuuid
-
+psycopg2-binary
