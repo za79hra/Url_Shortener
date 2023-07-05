@@ -1,9 +1,54 @@
+# version: '3'
+# services:
+#   app:
+#     build: .
+#     # command: sh -c "gunicorn --bind 0.0.0.0:8000 config.wsgi"
+#     command: sh -c "gunicorn --bind 0.0.0.0:8000 config.wsgi"
+
+#     # context: .
+#     # dockerfile: Dockerfile
+#     ports:
+#       - 8000:8000
+#     volumes:
+#       - .:/app
+#     depends_on:
+#       - redis
+#     environment:
+#       - REDIS_HOST=redis
+
+
+#   redis:
+#     container_name: redis
+#     image: redis:latest
+
+#     expose:
+#       - 6379
+ 
+#   db:
+#     container_name: postgres
+#     image: postgres:latest
+#     expose:
+#       - 5432
+#     volumes:
+#     - postgres_data:/var/lib/postgresql/data
+#     restart: unless-stopped
+#     environment:
+#       - POSTGRES_DB=postgres
+#       - POSTGRES_USER=postgres
+#       - POSTGRES_PASSWORD=mypass
+
+
+
+# volumes:
+#   postgres_data:
+
+
 version: '3'
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
+    command: sh -c "gunicorn --bind 0.0.0.0:8000 Url_shortener.wsgi"
+    # dockerfile: Dockerfile
     ports:
       - 8000:8000
     volumes:
@@ -13,23 +58,24 @@ services:
     environment:
       - REDIS_HOST=redis
 
-
   redis:
     container_name: redis
     image: redis:latest
-
     expose:
       - 6379
- 
+
   db:
     container_name: postgres
     image: postgres:latest
     expose:
       - 5432
     volumes:
-    - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=mypass
+
+volumes:
+  postgres_data:

@@ -10,8 +10,8 @@ WORKDIR /app
 
 # Install dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
+# RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --index-url=https://pypi.org/simple/ -r requirements.txt
 # Copy the code into the container
 COPY . .
 
