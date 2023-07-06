@@ -15,31 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-from django.urls import path, include
-from drf_yasg import openapi
-from drf_yasg.views import get_schema_view
-
-schema_view = get_schema_view(
-    openapi.Info(
-        title="url shortener",
-        default_version="1.0.0",
-        description="write orginal long url and get short url",
-        
-    ),
-    public=True,
-)
-
-
+from .swagger import schema_view
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include('url.urls')),
-    # Swagger documentation
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-    path('api-auth/', include('rest_framework.urls')),  # if using authentication
 
 
 ]

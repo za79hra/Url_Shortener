@@ -178,7 +178,5 @@ DEFAULTS = {
 }
 
 
-SWAGGER_SETTINGS = {
-    'DEFAULT_INFO': 'Url_Shortener.urls.swagger_info',
-}
+
     
