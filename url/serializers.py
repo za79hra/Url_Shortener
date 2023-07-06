@@ -38,4 +38,8 @@ class LinkShortenerSerializer(serializers.ModelSerializer):
         fields = ['orginal_url', 'short_url', 'url_viewed']
         read_only_fields = ['created_at', 'modified_at', 'is_deleted', 'owner']
 
-    
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation['short_url'] = f"http://127.0.0.1:8000/{representation['short_url']}/"
+        return representation
+

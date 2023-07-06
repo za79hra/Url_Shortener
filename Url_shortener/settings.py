@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     'url',
-    "rest_framework"
+    "rest_framework",
+    'drf_yasg',
 ]
 
 
@@ -85,20 +86,6 @@ WSGI_APPLICATION = "Url_shortener.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-
-#         'USER': 'postgres',
-#         'PASSWORD': 'mypass',
-#         'HOST': 'postgres',
-#         # 'HOST': 'localhost',
-#         'PORT': '5002',
-#         # 'PORT': '5432',
-#     }
-# }
 
 DATABASES = {
     "default": {
@@ -189,3 +176,9 @@ DEFAULTS = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=60),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
+
+
+SWAGGER_SETTINGS = {
+    'DEFAULT_INFO': 'Url_Shortener.urls.swagger_info',
+}
+    
