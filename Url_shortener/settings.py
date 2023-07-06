@@ -87,27 +87,18 @@ WSGI_APPLICATION = "Url_shortener.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-# DATABASES = {
-#     "default": {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.environ.get('DATABASE_NAME'),
-#         'HOST': os.environ.get('DATABASE_HOST'),
-#         'USER': os.environ.get('DATABASE_USER'),
-#         'PORT': os.environ.get('DATABASE_PORT'),
-#         'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-#     }
-# }
-
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "HOST": "localhost",
-        "USER": "postgres",
-        "PORT": "5433",
-        "PASSWORD": "mypass",
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'HOST': os.environ.get('DATABASE_HOST'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PORT': os.environ.get('DATABASE_PORT'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
     }
 }
+
+
 
 
 # Password validation
